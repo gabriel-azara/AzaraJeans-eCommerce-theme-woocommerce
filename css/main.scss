@@ -1,0 +1,216 @@
+// Include custome variables default overrides here
+$primary: rgb(36, 43, 124);
+$primary-opacity-8: rgba(36, 43, 124, 0.8);
+$gray: #E6E6E6;
+$sale: rgba(152, 158, 225, 0.6);
+$headings-font-family: 'Nunito', sans-serif;
+$headings-font-weight: 800;
+$font-family-base: 'Poppins', sans-serif;
+
+$theme-colors: (
+  "primary": $primary,
+  "primary-opacity-8": $primary-opacity-8,
+  "gray": $gray,
+  "sale": $sale
+);
+
+//Create your own map
+$custom-color: (
+  "icon-background": rgba(152, 158, 225, 0.2)
+);
+
+// Merge maps
+$team-colors: map-merge($theme-colors, $custom-color);
+
+$utilities: (
+  "rounded": (
+    property: border-radius,
+    class: rounded,
+    values: (
+      null: 1rem,
+      circle: 50%
+    )
+  )
+);
+@import "./bootstrap/scss/bootstrap";
+
+// Add custom code after this
+
+/**************** HEADER ************/
+.announcement-bar{
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--bs-gray);
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: inline-flex;
+    margin: 0 -10px;
+
+    li {
+      margin: 0 10px;
+      display: flex;
+      align-items: center;
+      color: rgb(36, 43, 124);
+
+      .bi {
+        background-color: rgba(152, 158, 225, 0.2);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 6px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg){
+    display: none;
+  }
+
+}
+
+.site-header{
+  .aws-search-field{
+    font-size: 0.9rem;
+    padding-left: 1.4rem;
+    border-radius: 20px!important;  
+  }
+}
+
+a:visited{
+  color: rgb(36, 43, 124);
+  
+}
+
+/********* MAIN MENU ******/
+.main-navigation{
+  font-weight: 600;
+
+  .current-menu-item{
+    background-color: rgb(124, 132, 180) 
+  }
+  
+  a{
+    text-transform: uppercase;
+    color: var(--bs-white);
+    padding: 0.6rem 1.4rem;
+  }
+
+  a:hover{
+    background-color: rgb(124, 132, 180)
+  }
+
+  .menu-toggle{
+    background-color: $primary;
+    color: $white;
+    border: none;
+  }
+
+  
+  .sub-menu{
+    li{
+      background-color: $primary;
+    }
+  }
+}
+.menu-item{
+  padding:0;
+  display:block;
+  float:left;
+}
+
+/********* FRONT PAGE ******/
+
+
+
+/********* SLIDER ******/
+
+.carousel{
+  .carousel-control-prev, .carousel-control-next{
+    width: 9%;
+  }
+}
+
+/********* CATEGORIES ******/
+
+.categories{
+  background-color: #f9f9f9;
+
+
+    .categories__col{
+      height: 212px;
+
+      img{
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @include media-breakpoint-up(md){
+      .categories__col{
+        height: 336px;
+      }
+    }
+}
+
+/********* FOOTER ******/
+
+.site-footer{
+  .menu{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  a{
+    color: $white;
+    text-decoration: none;
+    display: block;
+    padding: 0.3rem 0;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+}
+
+.popular-products, .special-offers{
+  .add_to_cart_button{
+    display: block!important;
+    text-align: center;
+  }
+  .attachment-woocommerce_thumbnail{
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
+
+#created{
+  a{
+    color: rgb(88, 88, 88);
+    text-decoration: underline!important;
+  }
+}
+
+.title_slide, .description_slide{
+  position: relative;
+  bottom: 15rem;
+  right: 11rem;
+}
+
+
+.carousel-inner .carousel-caption .btn-slide{
+  background-color: #242b7c;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.618em 1em;
+  border: none;
+  position: relative;
+  bottom: 15rem;
+  right: 11rem;
+}
+
+
+
+
